@@ -11,7 +11,7 @@ namespace Warehouse
          _warehouse = warehouse ?? throw new ArgumentNullException(nameof(warehouse));
       }
 
-      public bool CanBuy(Product product, int units)
+      public bool CanBuy(string productId, int units)
       {
          return false;
       }
