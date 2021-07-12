@@ -1,15 +1,19 @@
+using Moq;
 using Xunit;
 
 namespace Warehouse
 {
-    public class StoreTests
-    {
-        [Fact]
-        public void CanBuyIfUnitsEnoughInWarehouse()
-        {
-           Store store = new Store(new Warehouse());
+   public class StoreTests
+   {
+      [Fact]
+      public void CanBuyIfUnitsEnoughInWarehouse()
+      {
+         Mock<IWarehouse> warehouse = new Mock<IWarehouse>();
+         warehouse.Setup(w => w.UnitsFor("P1")).Returns(6);
 
-           Assert.True(store.CanBuy("PROD-1", 5));
-        }
-    }
+         Store store = new Store(warehouse.Object);
+
+         Assert.True(store.CanBuy("P1", 5));
+      }
+   }
 }

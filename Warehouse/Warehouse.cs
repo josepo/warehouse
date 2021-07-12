@@ -1,10 +1,15 @@
 ﻿namespace Warehouse
 {
-    public class Warehouse
-    {
-       public int UnitsFor(string productId)
-       {
-          return 0;
-       }
-    }
+   public interface IWarehouse
+   {
+      int UnitsFor(string productId);
+   }
+
+   public class Warehouse
+   {
+      public int UnitsFor(string productId)
+      {
+         return 0;
+      }
+   }
 }

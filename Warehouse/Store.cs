@@ -4,16 +4,16 @@ namespace Warehouse
 {
    public class Store
    {
-      private readonly Warehouse _warehouse;
+      private readonly IWarehouse _warehouse;
 
-      public Store(Warehouse warehouse)
+      public Store(IWarehouse warehouse)
       {
          _warehouse = warehouse ?? throw new ArgumentNullException(nameof(warehouse));
       }
 
       public bool CanBuy(string productId, int units)
       {
-         return false;
+         return _warehouse.UnitsFor(productId) >= units;
       }
    }
 }
