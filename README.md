@@ -1,2 +1,2 @@
 # warehouse
-Warehouse kata tested with Moq
+Warehouse kata tested with C# mocking frameworks.
