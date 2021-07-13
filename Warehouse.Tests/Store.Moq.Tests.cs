@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Warehouse
 {
-   public class StoreTests
+   public class StoreMoqTests
    {
       [Fact]
       public void CanBuyIfUnitsEnoughInWarehouse()
